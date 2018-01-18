@@ -124,7 +124,10 @@ module.exports = {
     })
 
     router.get('/users', (req, res) => {
-      res.json(slack.getUsers())
+      slack.getUsers()
+        .then(users => {
+          res.json(users)
+        })
     })
 
     router.get('/channels', (req, res) => {
