@@ -193,6 +193,16 @@ class Slack {
     return channels
   }
 
+  async getDirectChannels(...args) {
+    const {web} = this
+    const {ok, error, ims} = await web.im.list(...args)
+    if (!ok) {
+      throw new Error('Error getting direct channels:' + error)
+    }
+
+    return ims
+  }
+
   getTeam() {
     return this.data && this.data.team
   }

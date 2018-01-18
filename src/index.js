@@ -72,6 +72,10 @@ module.exports = {
       return slack.getChannels()
     }
 
+    bp.slack['getDirectChannels'] = function() {
+      return slack.getDirectChannels()
+    }
+
     bp.slack['getTeam'] = function() {
       return slack.getTeam()
     }
